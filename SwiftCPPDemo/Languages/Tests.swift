@@ -13,28 +13,24 @@ enum Tests {
         print("swift intance.name: \(si.name)")
         print("swift intance.age: \(si.age)")
         
-
-#warning(
-    #"""
-    TODO: zakkhoyt - Calling functions mutates? 
-    "Cannot use mutating member on immutable value: 'ppi' is a 'let' constant
-    """#
-)
+        // Must be var because Swift imports c++ classes as value types by default,
+        // and seems to be mutated even when calling 'getter' functions (below).
+        // This can be overriden if desired.
+        // [See here](https://www.swift.org/documentation/cxx-interop/#mapping-c-types-to-swift-reference-types)
         var cppi = SomeCPPClass("Mr. C++", 11, 0)
-
-        print("c++ intance.age: \(cppi.getAge())")
-        print("c++ intance.tally: \(cppi.getTally())")
-        print("c++ intance.name: \(cppi.getName())")
         
+        func printCppi() {
+            print("c++ intance.age: \(cppi.getAge())")
+            print("c++ intance.tally: \(cppi.getTally())")
+            print("c++ intance.name: \(cppi.getName())")
+        }
+        printCppi()
         
         cppi.setAge(si.age)
 #warning("TODO: zakkhoyt - Compiler error. Can't pass in si.name")
 //        cppi.setName(si.name)
         cppi.setName("Mr. Demo")
-
-        print("c++ intance.age: \(cppi.getAge())")
-        print("c++ intance.tally: \(cppi.getTally())")
-        print("c++ intance.name: \(cppi.getName())")
-
+        
+        printCppi()
     }
 }
