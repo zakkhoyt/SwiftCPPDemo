@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct SwiftCPPDemoApp: App {
     init () {
-        
+        Tests.cppFromSwift()
     }
     var body: some Scene {
         WindowGroup {

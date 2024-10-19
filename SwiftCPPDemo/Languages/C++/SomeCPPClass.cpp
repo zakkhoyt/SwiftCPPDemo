@@ -18,6 +18,25 @@ SomeCPPClass::SomeCPPClass(
     this->tally = tally;
 }
 
+std::string SomeCPPClass::getName() {
+    return name;
+}
+void SomeCPPClass::setName(std::string name) {
+    this->name = name;
+}
+
+
+u_int8_t SomeCPPClass::getAge() {
+    return age;
+}
+
+void SomeCPPClass::setAge(
+    u_int8_t age
+) {
+    this->age = age;
+}
+
+
 u_int64_t SomeCPPClass::getTally() {
     return tally;
 }

@@ -21,6 +21,13 @@ public:
         u_int8_t age,
         u_int64_t tally
     );
+    
+    std::string getName();
+    void setName(std::string name);
+    
+    u_int8_t getAge();
+    void setAge(u_int8_t age);
+    
     u_int64_t getTally();
     void setTally(u_int64_t tally);
 private:

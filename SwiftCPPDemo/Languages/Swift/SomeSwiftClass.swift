@@ -13,7 +13,7 @@ class SomeSwiftClass {
     init(
         name: String,
         nickname: String? = nil,
-        age: Int
+        age: UInt8
     ) {
         self.name = name
         self.nickname = nickname
@@ -22,7 +22,7 @@ class SomeSwiftClass {
     
     var name: String
     var nickname: String?
-    var age: Int
+    var age: UInt8
     
     func greet(message: String) -> String {
         "Hi I'm \(name)"
